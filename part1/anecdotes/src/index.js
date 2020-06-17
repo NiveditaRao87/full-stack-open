@@ -6,11 +6,17 @@ return <button onClick={onClick}>{text}</button>
 }
 
 const Anecdote = ({votes,anecdotes}) => {
-  // const max = votes.reduce((a,b) => Math.max(a,b))
-  // const winner = votes.findIndex(elem => elem === max)
-
-  const winner = votes.indexOf(Math.max(...votes))
-  return <p>{anecdotes[winner]}</p>
+  const max = votes.reduce((a,b) => Math.max(a,b))
+  if(max === 0){
+    return <h2>Vote for your favourite anecdote</h2>
+  } 
+  const winner = votes.findIndex(elem => elem === max)
+  
+  //const winner = votes.indexOf(Math.max(...votes))
+  return <>
+  <h2>Anecdote with most votes</h2>
+  <p>{anecdotes[winner]}</p>
+  </>
 }
 
 const App = ({anecdotes}) => {
@@ -30,6 +36,7 @@ const App = ({anecdotes}) => {
   
   return (
     <div>
+      <h2>Anecdote of the Day</h2>
       <p>{anecdotes[selected]}</p>      
   <p>has {votes[selected]} votes</p>
       <Button onClick={handleVoteClick} text="vote" />
