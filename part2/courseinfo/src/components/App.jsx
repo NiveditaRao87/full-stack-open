@@ -1,5 +1,5 @@
-import React from "react";
-import {Course,Header} from "./Course";
+import React from 'react'
+import {Course,Header} from './Course'
 
 const App = () => {
     const courses = [
@@ -64,9 +64,9 @@ const App = () => {
     ]
   
     return <> 
-    <Header name="Web development curriculum" heading="1"/>
+    <Header name='Web development curriculum' heading='1'/>
     {courses.map(course => <Course key={course.id} course={course} />)} 
     </>
   }
 
-  export default App;
+  export default App

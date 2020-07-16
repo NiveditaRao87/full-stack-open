@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react'
 
 const Header = ({name,heading}) => {
-    return heading === "1" ? <h1>{name}</h1> : <h2>{name}</h2>
+    return heading === '1' ? <h1>{name}</h1> : <h2>{name}</h2>
       
   }
   
@@ -30,10 +30,10 @@ const Header = ({name,heading}) => {
   
   const Course = ({course}) => {
       return <>
-      <Header name={course.name} heading="2"/>
+      <Header name={course.name} heading='2'/>
       <Content parts={course.parts} />
       <Total parts={course.parts} />
   </>
   }
 
-  export {Course, Header};
+  export {Course, Header}
