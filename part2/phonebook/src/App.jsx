@@ -61,7 +61,7 @@ const App = () => {
     .create({name: newName,number: newNumber})
     .then(returnedPerson => {setPersons(persons.concat(returnedPerson))
     handleNotification(`${returnedPerson.name} was added to phonebook`,'message')})
-    // Possible to create two with same key if not in sync with database
+    .catch(err=>handleNotification(err.response.data.error,'error'))
     setNewName('')
     setNewNumber('')
 
